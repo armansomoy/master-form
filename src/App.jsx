@@ -1,35 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+import ReusableForm from "./componenets/ReusableForm/ReusableForm";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const handleSignUpSubmit = (data) => {
+    console.log("sign Up data:", data);
+  };
+
+  const handleUpdateProfile = (data) => {
+    console.log("Update Profile data:", data);
+  };
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <ReusableForm formTitle={"Sign Up"} handleSubmit={handleSignUpSubmit}>
+        <div>
+          <h2>Please Sign Up</h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci,
+            blanditiis?
+          </p>
+        </div>
+      </ReusableForm>
+      <ReusableForm
+        formTitle={"Profile Update"}
+        submitBtnText={"update"}
+        handleSubmit={handleUpdateProfile}
+      >
+        <div>
+          <h2>Always Keep Your Profile Upto Date</h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci,
+            blanditiis?
+          </p>
+        </div>
+      </ReusableForm>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

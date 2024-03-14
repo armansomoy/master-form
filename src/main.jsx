@@ -6,13 +6,12 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import RefForm from './componenets/RefForm/RefForm.jsx';
-import HookForm from './componenets/HookForm/HookForm.jsx';
+
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element:  <HookForm></HookForm>,
+    element:  <App></App>,
   },
 ]);
 
